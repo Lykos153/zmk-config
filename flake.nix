@@ -19,10 +19,10 @@
 
         src = nixpkgs.lib.sourceFilesBySuffices self [ ".conf" ".keymap" ".yml" ];
 
-        board = "puchi_ble_v1";
-        shield = "cradio_%PART%";
+        board = "nice_nano_v2";
+        shield = "ergo_s1_oe_%PART%";
 
-        zephyrDepsHash = "sha256-LmzdR3nTURp1g4K6lIJuXqiT6H5SHXVh3UHcAYLtUBI=";
+        zephyrDepsHash = "sha256-LdGvEQH9/XvHecqxdgBbEW9TBykFtCCJz+In6upRC4w=";
 
         meta = {
           description = "ZMK firmware";

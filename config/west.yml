@@ -2,10 +2,36 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: wizarddata
+      url-base: https://github.com/wizarddata
   projects:
-    - name: zmk
+    - name: zephyr
       remote: zmkfirmware
-      revision: main
+      revision: 1ae0eb5ce8adafcec993e6fb8f4eeb6f818a7772  # v3.2.0+zmk-fixes
+      import:
+        name-blocklist:
+          - ci-tools
+          - hal_altera
+          - hal_cypress
+          - hal_infineon
+          - hal_microchip
+          - hal_nxp
+          - hal_openisa
+          - hal_silabs
+          - hal_xtensa
+          - hal_st
+          - hal_ti
+          - loramac-node
+          - mcuboot
+          - mcumgr
+          - net-tools
+          - openthread
+          - edtt
+          - trusted-firmware-m
+          - sof
+    - name: zmk
+      remote: wizarddata
+      revision: 15063d0c48ba99eb9a418348ba872fbe8c8e2d50  # Ergo_S-1_OE 
       import: app/west.yml
   self:
     path: config
