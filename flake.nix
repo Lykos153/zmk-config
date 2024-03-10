@@ -22,7 +22,7 @@
         board = "puchi_ble_v1";
         shield = "cradio_%PART%";
 
-        zephyrDepsHash = "sha256-LmzdR3nTURp1g4K6lIJuXqiT6H5SHXVh3UHcAYLtUBI=";
+        zephyrDepsHash = "";
 
         meta = {
           description = "ZMK firmware";
