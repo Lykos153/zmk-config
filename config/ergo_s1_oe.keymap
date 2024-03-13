@@ -9,9 +9,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 
-#define DEFAULT 0
-#define FN  1
-
 / {
     combos {
         compatible = "zmk,combos";
@@ -26,14 +23,6 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            // ---------------------------------------------------------------------------------------------------------------------------------
-            // | ESC  |  1   |  2   |  3   |  4   |  5   |                                                   |  6   |  7   |  8   |  9   |  0   | BSPC |
-            // | WIN  |  Q   |  W   |  E   |  R   |  T   |                                                   |  Y   |  U   |  I   |  O   |  P   | EQL  |
-            // | TAB  |  A   |  S   |  D   |  F   |  G   |                                                   |  H   |  J   |  K   |  L   | SCLN | QUOT |
-            // | LCTL |  Z   |  X   |  C   |  V   |  B   |      | CTL  | ALT  |         | CAPS | CTL  |      |  N   |  M   | COMM | DOT  | SLSH | MINS |
-            //        | GRV  | BSLS | LEFT | RGHT |      | SHFT |  FN  | HOME |         | PGUP | ENT  | SPC  |      |  UP  |  DN  | LBKT | RBKT |
-            //                                                         | END  |         | PGDN |
-
             bindings = <
 &kp ESC   &kp N1     &kp N2    &kp N3    &kp N4     &kp N5                                           &kp N6  &kp N7  &kp N8     &kp N9      &kp N0     &kp BSPC
 &kp LGUI  &kp Q      &kp W     &kp E     &kp R      &kp T                                            &kp Y   &kp U   &kp I      &kp O       &kp P      &kp EQUAL
@@ -67,14 +56,6 @@
         };
 
         fn_layer {
-            // ---------------------------------------------------------------------------------------------------------------------------------
-            // |BT_CLR|  F1  |  F2  |  F3  |  F4  |  F5  |                                                   |      | NLCK |  =   |  /   |  *   |      |
-            // |      |  F6  |  F7  |  F8  |  F9  |  F10 |                                                   |      |  7   |  8   |  9   |  -   |      |
-            // |      |      |      |      |      |      |                                                   |      |  4   |  5   |  6   |  +   |      |
-            // |      |      |      |      |      | PTSC |      |      |      |         |      |      |      |      |  1   |  2   |  3   | ENT  |      |
-            //        |      | INS  |      |      |      |      |  FN  |      |         |      |      |      |      |      |      |  .   | ENT  |
-            //                                                         |      |         |      |
-
             bindings = <
 &bt BT_CLR  &kp F1  &kp F2   &kp F3  &kp F4     &kp F5                                       &trans  &kp KP_NUM  &kp EQL  &kp SLASH  &kp STAR   &trans
 &trans      &kp F6  &kp F7   &kp F8  &kp F9     &kp F10                                      &trans  &kp N7      &kp N8   &kp N9     &kp MINUS  &trans
