@@ -7,11 +7,21 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 
 #define DEFAULT 0
 #define FN  1
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <28 15>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -29,8 +39,8 @@
 &kp LGUI  &kp Q      &kp W     &kp E     &kp R      &kp T                                            &kp Y   &kp U   &kp I      &kp O       &kp P      &kp EQUAL
 &kp TAB   &kp A      &kp S     &kp D     &kp F      &kp G                                            &kp H   &kp J   &kp K      &kp L       &kp SEMI   &kp SQT
 &kp DEL   &kp Z      &kp X     &kp C     &kp V      &kp B   &kp LCTRL  &mo 4    &kp CAPS  &kp RCTRL  &kp N   &kp M   &kp COMMA  &kp PERIOD  &kp SLASH  &kp MINUS
-          &kp GRAVE  &kp BSLH  &kp LEFT  &kp RIGHT  &mo 1   &mo 3      &mo 2    &mo 2     &mo 3      &mo 1   &kp UP  &kp DOWN   &kp LBKT    &kp RBKT
-                                                                       &mo 4    &mo 4
+          &kp GRAVE  &kp BSLH  &kp LEFT  &kp LSHFT  &mo 1   &mo 2      &mo 3    &mo 3     &mo 4      &mo 1   &kp UP  &kp DOWN   &kp LBKT    &kp RBKT
+                                                                       &mo 2    &mo 2
             >;
         };
 
@@ -42,6 +52,17 @@
 &trans     &kp FSLH   &kp DOT  &kp COMMA  &kp M   &kp N   &trans  &trans    &trans  &trans  &kp B   &kp V   &kp C   &kp X   &kp Y   &trans
            &trans     &trans   &trans     &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
                                                                   &trans    &trans
+            >;
+        };
+
+        neo_3 {
+            bindings = <
+&kp SPACE  &kp SPACE      &kp SPACE       &kp SPACE       &kp SPACE  &kp SPACE                                             &kp INT_YEN      &kp SPACE             &kp SPACE              &kp SPACE          &kp SPACE         &kp SPACE
+&kp SPACE  &kp SPACE      &kp UNDERSCORE  &kp LBKT        &kp RBKT   &kp RCTRL                                             &kp EXCLAMATION  &kp LT                &kp GREATER_THAN       &kp EQUAL          &kp AMPERSAND     &kp AT_SIGN
+&kp SPACE  &kp BACKSLASH  &kp SLASH       &kp LEFT_BRACE  &kp RBRC   &kp ASTERISK                                          &kp QUESTION     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS          &kp COLON         &kp SPACE
+&kp SPACE  &kp HASH       &kp DOLLAR      &kp PIPE        &kp TILDE  &kp SPACE     &trans  &trans    &kp SPACE  &kp SPACE  &kp GRAVE        &kp PLUS              &kp PERCENT            &kp DOUBLE_QUOTES  &kp SINGLE_QUOTE  &kp SEMICOLON
+           &kp SPACE      &kp SPACE       &kp SPACE       &kp SPACE  &trans        &trans  &trans    &kp SPACE  &kp SPACE  &kp SPACE        &kp SPACE             &kp SPACE              &kp SPACE          &kp SPACE
+                                                                                           &trans    &kp SPACE
             >;
         };
 
@@ -69,20 +90,9 @@
 &trans  &trans  &trans  &trans  &trans  &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &out OUT_TOG  &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
         &trans  &trans  &trans  &trans  &bt BT_CLR  &bt BT_SEL 2  &bt BT_SEL 0    &trans  &trans  &trans  &trans  &trans  &trans  &trans
                                                                   &bt BT_SEL 1    &trans
-            >;
-        };
-
-        neo_3 {
-            bindings = <
-&kp SPACE  &kp SPACE      &kp SPACE       &kp SPACE       &kp SPACE  &kp SPACE                                                   &kp INT_YEN      &kp SPACE             &kp SPACE              &kp SPACE          &kp SPACE         &kp SPACE
-&kp SPACE  &kp SPACE      &kp UNDERSCORE  &kp LBKT        &kp RBKT   &kp RCTRL                                                   &kp EXCLAMATION  &kp LT                &kp GREATER_THAN       &kp EQUAL          &kp AMPERSAND     &kp AT_SIGN
-&kp SPACE  &kp BACKSLASH  &kp SLASH       &kp LEFT_BRACE  &kp RBRC   &kp ASTERISK                                                &kp QUESTION     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS          &kp COLON         &kp SPACE
-&kp SPACE  &kp HASH       &kp DOLLAR      &kp PIPE        &kp TILDE  &kp SPACE     &kp SPACE  &kp SPACE    &kp SPACE  &kp SPACE  &kp GRAVE        &kp PLUS              &kp PERCENT            &kp DOUBLE_QUOTES  &kp SINGLE_QUOTE  &kp SEMICOLON
-           &kp SPACE      &kp SPACE       &kp SPACE       &kp SPACE  &kp SPACE     &kp SPACE  &kp SPACE    &kp SPACE  &kp SPACE  &kp SPACE        &kp SPACE             &kp SPACE              &kp SPACE          &kp SPACE
-                                                                                              &kp SPACE    &kp SPACE
             >;
         };
     };
