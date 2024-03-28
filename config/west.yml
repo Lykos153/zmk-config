@@ -2,12 +2,12 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: wizarddata
-      url-base: https://github.com/wizarddata
+    - name: lykos153
+      url-base: https://github.com/Lykos153
   projects:
     - name: zephyr
       remote: zmkfirmware
-      revision: 1ae0eb5ce8adafcec993e6fb8f4eeb6f818a7772  # v3.2.0+zmk-fixes
+      revision: v3.5.0+zmk-fixes
       import:
         name-blocklist:
           - ci-tools
@@ -30,8 +30,8 @@ manifest:
           - trusted-firmware-m
           - sof
     - name: zmk
-      remote: wizarddata
-      revision: 15063d0c48ba99eb9a418348ba872fbe8c8e2d50  # Ergo_S-1_OE 
+      remote: lykos153
+      revision: Ergo_S-1_OE #f51a4423e34dc846e99cec5d070889409a53ae09 # Ergo_S-1_OE 
       import: app/west.yml
   self:
     path: config
